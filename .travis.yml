@@ -4,12 +4,10 @@ language: bash
 before_install: 
     - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-11/run.sh | bash
 notifications:
-    slack: devops-team-otus:oKWWDooXbeGjdns7wlQxfueW#ivan_guba
+    slack: 
         rooms:
-           - devops-team-otus:oKWWDooXbeGjdns7wlQxfueW#general
-           - devops-team-otus:oKWWDooXbeGjdns7wlQxfueW#random
-            secure:
-m3oSCm0l85AujpWAAeihM23e+fuMpDTPqlz4izpIZOQ0hebfRFkk83OhvoCdebikZ0N1oT5Gb7rNM+NXgv2/4ADFSjxV118VH7GUdC3zxWmoV4ZCHwRahdhsSr3o4aFxmxJmRvgYyQDDi4E2sDRe7GPG656IM50GcGMCA94M6Jux7HU8ybGxjbv3EI6EL8GvdB6tbvgGotUwh0CRv6zmgR7EMSSjzwft1ys2f9R3AN2mHo4iSsnIcOI3/4bPc/ezQHwe3FKaQJiXDn046tSx8hhe8MB3UW3H0npEIaTxMlxVuNJfmWabezOtKDPGiMzdyagz4XynPuorfh5kqjMpvWc+36BWfAMlie/+hVwKPH6FnvvyjrqOxQUqx0S+pVvcE9qH4E/GQuev1XfiC8eBB/2yCnbIDnNnI/FXmqF0/5BKt/kMX3v8pODwdSWr+0Sr5Q05jZF93BhwXrGmB6yAWLWAaoDQscpOjOb1yEmvD2w3V3FPeZZSngBpGKSX6HK6wwpy6EkWOXtERMPzuvlzCa3d9orWstUYtAl/8YzXHIBxsaPAukX7uZG8gZo++M71V1edMrzv85qBKlr89it6hqQk5eOfkRsmrCLAABdJ0V3GLiUV+oIamOXJG8nTNt0HE3QTJaCOZilVREk6ptME0Y9LeYPyckssraj+mztwhMI=
+secure: lGno3vnn5DeFwqze09a0A7b/f9hZDBI+GpSv//+le1tg6n4Z53gPUBUpCE9MNRRQ35dZ1YnOhXdgDn4A5PhzllVzBjY9ezzDf0spSkMwloqfcyDsEBRLnW2KhveOLNG4CMxcGzdUOAhZ04VkjZ3WnRMg7wVFm09Mng3MOHqGtHA2WCrSIStDTG7WUAmNVpZxJGX3bzbLJhZA4N10EJnoC2FNesR5/2tZ/wncAAb1gDjTIo9xPDJDE2gbkLR/RBPY8xF2TiZMqt9KKLHn1Wn+DCbL7uVpTIKUim0kL9l5I59srkivFpVvut+rhr48cCvRIvppcwX9jU4+GoyEEs0vBi9nYSsVB7F3ohgCYasTuBq8Q/ARVRzWabEAGMbpjuqeSg0LxicEMwpE1eC2U1T+uzcN3RLLXPscDhPcCuw8o/CjV4pL8Gv4q+2F2YrqDm0g+nOi6W/CNtmhkvUlySldC3c8UJA2dcRZMQS9TQP5t87uq5LYN0ruDMVzLIKgYX7ubeCBz/PvdqbjPARCO3WuoeFltce3Vefd2cyUC1XtzsfPI/JLSQarwlAMOF0Rogg7TKEscv2uSGyEAIYDMRXOGMj73cg/weJZwxsM1C5PiH1ET+u5NhTvhMhLDJYP5YO26PgL9nY0mW0A28kQSOTPa76QpeY0HYJugEhvdsKrum8=
+
 
 
 
