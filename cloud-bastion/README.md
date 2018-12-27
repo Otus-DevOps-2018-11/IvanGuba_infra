@@ -10,6 +10,7 @@
     10.132.0.3      — someinternalhost
 
     ivan@VTB-Notebook-GubaIV:~/IvanGuba_infra$ ssh -A -t ekl17@104.155.108.24 ssh 10.132.0.3
+
     Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.15.0-1025-gcp x86_64)
 
      * Documentation:  https://help.ubuntu.com
@@ -33,19 +34,20 @@
 
 способ подключения к someinternalhost по алиасу
 
-Создаем файл config
+    Создаем файл config
 
-    Host bastion
-        HostName 104.155.108.24
-        User ekl17
+        Host bastion
+            HostName 104.155.108.24
+            User ekl17
 
-    Host someinternalhost
-        ProxyCommand ssh -A bastion -W 10.132.0.3:22
-        User ekl17
+        Host someinternalhost
+            ProxyCommand ssh -A bastion -W 10.132.0.3:22
+            User ekl17
 
-Добавлем его через ssh-add
+    Добавлем его через ssh-add
 
     ivan@VTB-Notebook-GubaIV:~/IvanGuba_infra$ ssh someinternalhost
+
     Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.15.0-1025-gcp x86_64)
 
      * Documentation:  https://help.ubuntu.com
@@ -70,6 +72,6 @@
 Адреса в GCP
 
     bastion_IP = 104.155.108.24
-    aomeinternalhost_IP = 10.156.0.3
+    someinternalhost_IP = 10.132.0.3
 
 
