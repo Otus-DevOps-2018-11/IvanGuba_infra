@@ -10,7 +10,7 @@ provider "google" {
 
 resource "google_compute_project_metadata_item" "default" {
   key   = "ssh-keys"
-  value = "ivan:${file(var.public_key_path)}"
+  value = "ivan:${file(var.public_key_path)}ekl17:${file(var.public_key_path)}"
 }
 
 # объявляем ресурс - экземпляр ВМ
