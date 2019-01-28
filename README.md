@@ -1,5 +1,12 @@
 IvanGuba_infra repository
 
+ДЗ №8 Ansible-1
+
+Создан inventory и ansible.cfg. Проверено подключение к хостам и возможность передачи команд
+Создан inventory.yml
+Создан базовый playbook clone.yml
+При выполнении playbook изменилось состояние changed=1, поскольку директория отсутствовала и ansible склонировал её. 
+
 ДЗ №6 Terraform-1
 
 Задание со*
