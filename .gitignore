@@ -8,3 +8,6 @@ variables.json
 ../terraform/.terraform/
 *.retry
 .terraform.tfstate.lock.info
+../terraform/.terraform.tfstate.lock.info
+
+
