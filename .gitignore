@@ -5,3 +5,9 @@ variables.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+../terraform/.terraform/
+*.retry
+.terraform.tfstate.lock.info
+../terraform/.terraform.tfstate.lock.info
+
+

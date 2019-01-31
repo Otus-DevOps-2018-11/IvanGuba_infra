@@ -5,7 +5,8 @@
     "gcp_machine_type": "f1-micro"
   },
 
-  "builders": [{
+  "builders": [
+    {
     "type": "googlecompute",
     "project_id": "{{user `gcp_project_id`}}",
     "image_name": "reddit-app-{{timestamp}}",
@@ -19,13 +20,13 @@
     "tags": "reddit-app-image",
     "zone": "europe-west1-b",
     "ssh_username": "appuser"
-  }],
+    }
+  ],
 
-  "provisioners": [{
-    "type": "shell",
-    "scripts": [
-      "scripts/install_ruby.sh"
-    ],
-    "execute_command": "sudo {{.Path}}"
-  }]
+  "provisioners": [
+    {
+    "type": "ansible",
+    "playbook_file": "ansible/packer_app.yml"
+    }
+  ]
 }
