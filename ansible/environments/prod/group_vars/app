@@ -1,0 +1,7 @@
+db_host: 35.190.195.234
+
+nginx_sites:
+  default:
+    - listen 80 default_server
+    - server_name _
+    - location / { proxy_pass http://127.0.0.1:9292; }

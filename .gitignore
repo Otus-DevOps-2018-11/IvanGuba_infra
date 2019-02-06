@@ -9,5 +9,7 @@ variables.json
 *.retry
 .terraform.tfstate.lock.info
 ../terraform/.terraform.tfstate.lock.info
+jdauphant.nginx
+vault.key
 
 

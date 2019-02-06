@@ -47,5 +47,6 @@ variable env {
 
 variable "source_ranges" {
     description = "Allowed IP addresses"
-    default     = ["85.140.4.94/32"]
+    default     = ["0.0.0.0/0"]
 }
+
