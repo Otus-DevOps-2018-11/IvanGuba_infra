@@ -1,6 +1,9 @@
+#packer
 variables.json
 .//packer-base/variables.json
 *.tfstate
+
+#terraform
 *.tfstate.*.backup
 *.tfstate.backup
 *.tfvars
@@ -9,7 +12,15 @@ variables.json
 *.retry
 .terraform.tfstate.lock.info
 ../terraform/.terraform.tfstate.lock.info
+
+#ansible
 jdauphant.nginx
 vault.key
 
-
+#vagrant & molecule
+./vagrant/
+*.log
+*.pyc
+*.molecule
+*.cache
+*.pytest_cache
