@@ -19,8 +19,12 @@ vault.key
 
 #vagrant & molecule
 ./vagrant/
+./.vagrant/
 *.log
 *.pyc
 *.molecule
 *.cache
 *.pytest_cache
+./venv/
+./.venv/
+
