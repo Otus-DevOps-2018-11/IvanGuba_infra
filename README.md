@@ -1,5 +1,27 @@
 IvanGuba_infra repository
 
+  ДЗ №11 Ansible-4
+
+    Установлен vagrant и обновлен gitignore
+    Установлен virtualbox
+    Создан и наполнен vagrantfile
+    Созданы инстансы appserver и dbserver с помощью vagrant
+    Создан playbook base для установки python
+    Доработана роль db, добалены таски install_mongo и config_mongo
+    Доработана роль app, добалены таски puma и ruby, параметризировано имя пользователя (используется 'vagrant' вместо 'ubuntu')
+    Создан virtualenv и установлены molecule и testinfra
+    Выполнено molecule init scenario для создания заготовки тестов роли db
+    Добавлены тесты в testinfra
+    Добавлен тест к роли db для проверки БД слушает по нужному порту (27017)
+    Использованы роли db и app в playbook'ах зacker_db и packer_app и проверена работоспособность
+    (использованы теги для запуска только нужных тасков, теги указаны в шаблонах пакера)
+    Создан virtualenv -p /usr/bin/python2.7 --no-site-packages .venv и установлена molecule
+    Для решения проблемы со включённым на хосте selinux нужно скопировать python2-libselinux в .venv cp -r /usr/lib64/python2.7/site-packages/*selinux* .venv/lib64/python2.7/site-packages/
+    Использована команда molecule init scenario --scenario-name default -r db -d vagrant для создания заготовки тестов для роли db
+    Добавлены тесты, используя модули Testinfra
+    Добавлен тест к роли db для проверки того, что БД слушает по нужному порту (27017)
+    Использованы роли db и app в плейбуках packer_db.yml и packer_app.yml и проверено, что всё работает как прежде
+
   ДЗ №9 Ansible-2
 
     Создан playbook все в одном сценарии
