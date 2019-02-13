@@ -1,0 +1,50 @@
+---
+- name: Configure hosts & deploy application   # имя
+  hosts: all                                   # Для каких хостов будут выполняться описанные ниже таски (hosts)
+  vars:                                        # Блок переменных
+    mongo_bind_ip: 0.0.0.0 
+    db_host: 10.132.0.30  
+  tasks:                                       # Блок тасков (заданий), которые будут выполняться для данных хостов                                 
+    - name: Change mongo config file            # Имя таски 
+      become: true                               # Выполнить задание от root
+      template:                                  # Блок шаблонов
+        src: templates/mongod.conf.j2             # Путь до локального файла-шаблона
+        dest: /etc/mongod.conf                    # Путь на удаленном хосте
+        mode: 0644                                # Права на файл, которые нужно установить
+      tags: db-tag                               # Список тэгов для задачи
+      notify: restart mongod
+    - name: App unit file for Puma                # Копируем файл на удаленный хост 
+      become: true
+      copy:
+        src: files/puma.service                    # Откуда
+        dest: /etc/systemd/system/puma.services    # Куда
+      tags: app-tag
+      notify: reload-puma
+    - name: Add config for DB connection         # Копируем шаблон db_config
+      template:
+        src: templates/db_config.j2
+        dest: /home/appuser/dbconfig
+      tags: app-tag
+    - name: enable puma                          # Настраиваем автостарт Puma-сервера
+      become: true
+      systemd: name=puma enabled=yes
+      tags: app-tag       
+    - name: Fetch the latest version of application code    # Выкачиваем последнюю версию из репозитория
+      git:
+        repo: 'https://github.com/express42/reddit.git'
+        dest: /home/appuser/reddit
+        version: monolith                                   # Ветка
+      tags: deploy-tag
+      notify: reload-puma
+    - name: Bundle install                        # Запускаем установку
+      bundler:
+        state: present
+        chdir: /home/appuser/reddit                 # В какой директории выполнем команду bundle    
+      tags: deploy-tag                            
+  handlers:                                    # Блок хэндлеров
+    - name: restart mongod                        # Рестарт базы             
+      become: true
+      service: name=mongod state=restarted 
+    - name: reload-puma                           # Рестарт сервиса
+      become: true
+      systemd: name=puma state=restarted
